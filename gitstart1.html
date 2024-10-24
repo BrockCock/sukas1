@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красивый сайт с горным фоном</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://images.unsplash.com/photo-1568581376415-d0b5f27f3b1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            color: #333;
+        }
+
+        .container, .download-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            display: none; /* Скрыть при загрузке */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .input-group {
+            margin: 15px 0;
+        }
+
+        .input-group input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #007bff;
+        }
+
+        .button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        .advert-table {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s forwards;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .advert-table:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .advert-table p {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+            color: #28a745;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Анимация фона */
+        @keyframes moveBackground {
+            from {
+                background-position: 0% 0%;
+            }
+            to {
+                background-position: 100% 100%;
+            }
+        }
+
+        body {
+            animation: moveBackground 30s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" id="registration">
+        <h1>Регистрация</h1>
+        <div class="input-group">
+            <input type="text" placeholder="Ваше имя" required>
+        </div>
+        <div class="input-group">
+            <input type="email" placeholder="Ваш email" required>
+        </div>
+
+        <button class="button" onclick="register()">Зарегистрироваться</button>
+    </div>
+
+    <div class="download-container" id="download">
+        <h1>Поздравляем!</h1>
+        <p>Вы успешно зарегистрировались.</p>
+<button class="button" id="downloadButton"><a href="https://example.com/uploads/XrayMod-2.3.2.jar" style="color: white; text-decoration: none;">СКАЧАТЬ ФАЙЛ by ASM1k (Xray 1.21)</a></button>
+
+    </div>
+
+    <div class="advert-table" onclick="window.open('https://t.me/v8x51', '_blank')">
+        <p>🌟 РЕКЛАМА TG @v8x51 🌟</p>
+    </div>
+
+    <script>
+        document.getElementById('registration').style.display = 'block'; 
+
+        function register() {
+            document.getElementById('registration').style.display = 'none'; 
+            document.getElementById('download').style.display = 'block'; 
+        }
+    </script>
+
+</body>
+
+</html>
